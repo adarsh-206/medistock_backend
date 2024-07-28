@@ -19,6 +19,10 @@ app.use(cors());
 
 app.use('/api/auth', authRoutes);
 
+app.use('/', (req, res) => {
+  res.json({message: "Hello, I am working!"})
+})
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
