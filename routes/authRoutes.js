@@ -19,6 +19,18 @@ router.post(
   register
 );
 
+// @route   POST /api/auth/verify-otp
+// @desc    Verify OTP
+// @access  Public
+router.post(
+  '/verify-otp',
+  [
+    check('email', 'Please include a valid email').isEmail(),
+    check('otp', 'OTP is required').not().isEmpty(),
+  ],
+  verifyOtp
+);
+
 // @route   POST /api/auth/login
 // @desc    Login user & get token
 // @access  Public
