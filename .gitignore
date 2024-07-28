@@ -39,3 +39,4 @@ build/
 # Temporary directories and files
 tmp/
 temp/
+.vercel
